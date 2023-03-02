@@ -36,7 +36,7 @@ namespace Mission09_klintyk.Infrastructuer
 
             TagBuilder final = new TagBuilder("div");
 
-            for(int i =1; i< PageModel.TotalPages; i++)
+            for(int i =1; i<= PageModel.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { page_num = i });
