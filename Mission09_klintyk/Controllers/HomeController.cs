@@ -9,15 +9,6 @@ namespace Mission09_klintyk.Controllers
 {
     public class HomeController : Controller
     {
-        //private BookstoreContext context { get; set; }
-        ////public HomeController(BookstoreContext temp)
-        ////{
-        ////    context = temp;
-        ////}
-
-        ////shortcut of above code
-        //public HomeController(BookstoreContext temp) => context = temp;
-
         private IBookstoreRepository repo; 
         public HomeController (IBookstoreRepository temp)
         {

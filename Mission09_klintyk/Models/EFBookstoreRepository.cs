@@ -9,7 +9,7 @@ namespace Mission09_klintyk.Models
     {
         private BookstoreContext context { get; set; }
 
-        private EFBookstoreRepository(BookstoreContext temp)
+        public EFBookstoreRepository(BookstoreContext temp)
         {
             context = temp;
         }
