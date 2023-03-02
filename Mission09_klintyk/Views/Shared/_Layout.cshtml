@@ -1,15 +1,22 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>BookStore</title>
     <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
-    <script src="~/lib/js/bootstrap.js"></script>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">THE BOOK NOOK AND CRANNY BOOKSTORE</span>
+    </div>
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+
+            <img src="~/book.jpg" width="400" />
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>
