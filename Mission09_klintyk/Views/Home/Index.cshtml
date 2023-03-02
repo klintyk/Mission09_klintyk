@@ -4,9 +4,11 @@
 @{
 }
 
-@model List<Book>
+@model IQueryable<Book>
+
 <h1> This is Exclusive Book's Online Store </h1>
 
+<!--loop to get all results displayed-->
 @foreach (Book b in Model)
 {
     <h3>@b.Title</h3>
@@ -20,3 +22,9 @@
         <li>Price: $@b.Price</li>
     </ul>
 }
+
+<a asp-action="Index" asp-route-page_num="1">1</a>
+<a asp-action="Index" asp-route-page_num="2">2</a>
+<a asp-action="Index" asp-route-page_num="3">3</a>
+<a asp-action="Index" asp-route-page_num="4">4</a>
+<a asp-action="Index" asp-route-page_num="5">5</a>

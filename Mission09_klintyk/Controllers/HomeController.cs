@@ -15,9 +15,14 @@ namespace Mission09_klintyk.Controllers
             repo = temp;
         }
     
-        public IActionResult Index()
+        public IActionResult Index(int page_num = 1)
         {
-            var book = repo.Books.ToList();
+            int page_size = 10;
+            var book = repo.Books
+                .OrderBy(b => b.Title)
+                .Skip((page_num-1)*page_size)
+                //take 10 per page
+                .Take(page_size);
             return View(book);
         }
     }
