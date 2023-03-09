@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Mission09_klintyk.Components
 {
-    public class CategoryViewComponent : ViewComponent
+    public class CategoriesViewComponent : ViewComponent
     {
         private IBookstoreRepository repo { get; set; }
 
-        public CategoryViewComponent (IBookstoreRepository temp)
+        public CategoriesViewComponent (IBookstoreRepository temp)
         {
             repo = temp; 
         }

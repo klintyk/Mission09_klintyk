@@ -29,7 +29,7 @@ namespace Mission09_klintyk.Pages
         public IActionResult OnPost(int bookid, string returnUrl)
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookid);
-            cart = new Cart();
+            cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
             cart.AddItem(b, 1);
             HttpContext.Session.SetJson("cart", cart);
             return RedirectToPage(new { ReturnUrl = returnUrl });
