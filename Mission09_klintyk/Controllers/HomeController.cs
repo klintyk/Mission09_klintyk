@@ -16,13 +16,14 @@ namespace Mission09_klintyk.Controllers
             repo = temp;
         }
     
-        public IActionResult Index(int page_num = 1)
+        public IActionResult Index(string category, int page_num = 1)
         {
             int page_size = 10;
 
             var x = new BooksViewModel
             {
                 Books = repo.Books
+                .Where(b => b.Category == category || category == null)
                 .OrderBy(b => b.Title)
                 .Skip((page_num - 1) * page_size)
                 //take 10 per page
@@ -30,7 +31,7 @@ namespace Mission09_klintyk.Controllers
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks =(category == null?  repo.Books.Count() : repo.Books.Where(x=>x.Category == category).Count()),
                     BooksPerPage = page_size,
                     CurrentPage = page_num
                 }

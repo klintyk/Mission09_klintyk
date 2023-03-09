@@ -33,6 +33,8 @@ namespace Mission09_klintyk
             });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,8 +53,20 @@ namespace Mission09_klintyk
                 app.UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                        "categorypage", "{category}/Page{page_num}",
+                        new { Controller = "Home", action = "Index" });
+                    endpoints.MapControllerRoute(
+                        name: "Paging",
+                        pattern: "Page{page_num}",
+                        defaults: new { Controller = "Home", action = "Index", page_num =1});
+                    endpoints.MapControllerRoute(
+                        "category", "{category}", 
+                        new { Controller = "home", action = "Index", page_num=1 });
+                    
+
+                    endpoints.MapDefaultControllerRoute();
+
+                    endpoints.MapRazorPages();
                 });
             });
         }
