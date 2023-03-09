@@ -18,8 +18,9 @@ namespace Mission09_klintyk.Pages
         }
 
         public Cart cart { get; set; }
-        public void OnGet()
+        public void OnGet(Cart c)
         {
+            cart = c;
         }
 
         public IActionResult OnPost(int bookid)
@@ -27,7 +28,7 @@ namespace Mission09_klintyk.Pages
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookid);
             cart = new Cart();
             cart.AddItem(b, 1);
-            return RedirectToPage();
+            return RedirectToPage(cart);
         }
     }
 }
