@@ -35,7 +35,7 @@ namespace Mission09_klintyk.Models
             Items.RemoveAll(x => x.Book.BookId == book.BookId);
         }
 
-        public virtual void ClearBasket()
+        public virtual void EmptyCart()
         {
             Items.Clear();
         }
@@ -55,7 +55,5 @@ namespace Mission09_klintyk.Models
         public int LineID { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }
-
-
     }
 }
