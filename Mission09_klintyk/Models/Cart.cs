@@ -40,6 +40,11 @@ namespace Mission09_klintyk.Models
             Items.Clear();
         }
 
+        public virtual void ClearCart()
+        {
+            Items.Clear();
+        }
+
         public double CalcTotal()
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);

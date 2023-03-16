@@ -37,4 +37,3 @@ namespace Mission09_klintyk.Models
         public bool OrderReceived { get; set; } = false;
     }
 }
-}

@@ -33,11 +33,16 @@ namespace Mission09_klintyk.Models
             base.RemoveItem(book);
             Session.SetJson("cart", this);
         }
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-            Session.Remove("cart");
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return base.Equals(obj);
+        //    Session.Remove("cart");
+        //}
 
+        public override void ClearCart()
+        {
+            base.ClearCart();
+            Session.Remove("Cart");
+        }
     }
 }
