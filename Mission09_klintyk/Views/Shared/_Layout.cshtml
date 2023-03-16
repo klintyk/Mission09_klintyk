@@ -6,10 +6,19 @@
     <title>BookStore</title>
     <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@849&display=swap" rel="stylesheet">
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
-<body>
+<body style="font-family:'Exo';">
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand ml-2">THE BOOK NOOK AND CRANNY BOOKSTORE</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">THE BOOK NOOK AND CRANNY BOOKSTORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row m-1 p-1">
         <div id="category" class="col-3">
