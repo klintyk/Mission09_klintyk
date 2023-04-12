@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_klintyk.Models
 {
-    public class IPurchaseRepository
+    public interface IPurchaseRepository
     {
         public IQueryable<Purchase> Purchases { get; }
         public void SavePurchase(Purchase purchase);
